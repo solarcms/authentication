@@ -1,0 +1,54 @@
+.modal > .left{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: auto;
+  bottom:0;
+}
+
+.modal > .right{
+  position: absolute;
+  top: 0;
+  left: auto;
+  right: 0;
+  bottom:0;
+}
+
+.modal > .top{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: auto;
+}
+
+.modal > .bottom{
+  position: absolute;
+  top: auto;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+
+.modal-backdrop{
+  background-color: $dark;
+  &.in{
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+  }
+}
+
+.modal-over{
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: fixed;
+}
+
+.modal-center{
+  position: absolute;
+  left:50%;
+  top:50%;
+}

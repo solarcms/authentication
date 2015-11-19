@@ -1,0 +1,38 @@
+{
+  "name": "solarcms-authentication",
+  "version": "1.0.0",
+  "description": "SolarCMS authentication",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "solar",
+    "cms",
+    "auth",
+    "authentication"
+  ],
+  "author": "Tseegii Tselmeg <tseegii.it@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-core": "^6.1.20",
+    "babel-eslint": "^4.1.5",
+    "babel-loader": "^6.1.0",
+    "copy-webpack-plugin": "^0.2.0",
+    "css-loader": "^0.22.0",
+    "extract-text-webpack-plugin": "^0.9.1",
+    "file-loader": "^0.8.4",
+    "node-sass": "^3.4.2",
+    "sass-loader": "^3.1.1",
+    "url-loader": "^0.5.6",
+    "webpack": "^1.12.4",
+    "webpack-dev-server": "^1.12.1"
+  },
+  "dependencies": {
+    "animate.css": "^3.4.0",
+    "bootstrap-sass": "^3.3.5",
+    "font-awesome": "^4.4.0",
+    "jquery": "^2.1.4",
+    "node-waves": "^0.7.4"
+  }
+}
