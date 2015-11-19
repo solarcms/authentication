@@ -14,6 +14,9 @@ class AuthenticationController extends Controller {
 
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
+    protected $redirectPath = '/solar/dashboard';
+    protected $loginPath = '/solar/auth/login';
+    protected $redirectAfterLogout = '/solar/auth/login';
 
     public function __construct()
     {
