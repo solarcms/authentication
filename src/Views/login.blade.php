@@ -6,6 +6,7 @@
     <meta name="description" content="Solar content management system"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
     <link rel="stylesheet" href="{{ URL::asset('shared/css/dependencies.css') }}" type="text/css"/>
+    <link rel="stylesheet" href="{{ URL::asset('shared/css/bundle.css') }}" type="text/css"/>
     <link rel="stylesheet" href="{{ URL::asset('assets/auth/css/bundle.css') }}" type="text/css"/>
 </head>
 <body>
@@ -29,7 +30,7 @@
             <form action="{{ URL::route('Solar.Auth::login.post') }}" method="post" class="login-form">
                 {{ csrf_field() }}
                 <div class="md-form-group float-label">
-                    <input type="email" class="md-input" id="email-input" name="email" value="{{ old('email') }}">
+                    <input type="email" class="md-input" id="email-input" name="email">
                     <label for="email-input">Email</label>
                 </div>
                 <div class="md-form-group float-label">
@@ -45,6 +46,12 @@
             </form>
         </div>
 
+        @if (count($errors) > 0)
+            <div class="text-center text-danger">
+                Нэвтрэх нэр эсвэл нууц үг буруу байна.
+            </div>
+        @endif
+
         <div class="p-v-lg text-center font-thin">
             <div>Powered by Solar CMS &copy 2015</div>
         </div>
@@ -53,6 +60,7 @@
 </div>
 
 <script src="{{ URL::asset('shared/js/dependencies.js')}}"></script>
+<script src="{{ URL::asset('shared/js/bundle.js')}}"></script>
 <script src="{{ URL::asset('assets/auth/js/bundle.js')}}"></script>
 </body>
 </html>

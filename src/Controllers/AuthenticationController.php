@@ -61,4 +61,11 @@ class AuthenticationController extends Controller {
         ]);
     }
 
+
+    public function getRegister()
+    {
+        return view('Authentication::register');
+    }
+
+
 }
