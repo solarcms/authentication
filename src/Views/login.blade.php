@@ -2,65 +2,97 @@
 <html lang="en">
 <head>
     <meta charset="utf-8"/>
-    <title>Solar CMS::Authentication</title>
-    <meta name="description" content="Solar content management system"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-    <link rel="stylesheet" href="{{ URL::asset('shared/css/dependencies.css') }}" type="text/css"/>
-    <link rel="stylesheet" href="{{ URL::asset('shared/css/bundle.css') }}" type="text/css"/>
-    <link rel="stylesheet" href="{{ URL::asset('assets/auth/css/bundle.css') }}" type="text/css"/>
+    <title>Financial software</title>
+    <meta name="description" content="Financial soft"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimal-ui"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="{{ URL::asset('shared/css/vendor.css') }}">
+    <link rel="stylesheet" href="{{ URL::asset('shared/css/app.css') }}">
+
+    @if(Config::get('app.debug'))
+        <link rel="stylesheet" href="http://localhost:3000/css/app.css">
+    @else
+        <link rel="stylesheet" href="{{ URL::asset('assets/auth/css/app.css') }}">
+    @endif
+    @yield('style')
 </head>
 <body>
+<div class="layer"></div>
 
-<div class="auth">
-    <div class="pull-left p brand-quote">
-        <h1 class="text-u-c"><i class="fa fa-linux m-r-sm"></i>Solar CMS</h1>
-        <small class="font-thin text-md">
-            The Solar is a powerful CMS based on Laravel framework. <br>
-            Feel free to use, it is fully open source system
-        </small>
-    </div>
+<div class="app auth" id="app">
 
-    <div class="pull-right b-l md-whiteframe-z1 w-auto-xs auth-block bg-white">
-        <div class="p-lg text-color m">
-            <div class="m-b text-sm text-2x">
-                <h2 class="font-400">Sign in</h2>
-                <small class="font-thin">Please login with your credential</small>
+    <div class="center-block w-xxl w-auto-xs p-y-md">
+        <div class="navbar m-b-md m-t-lg">
+            <div class="pull-center">
+                <a class="navbar-brand">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="24" height="24">
+                        <path d="M 4 4 L 44 4 L 44 44 Z" fill="#3F51B5"/>
+                        <path d="M 4 4 L 34 4 L 24 24 Z" fill="rgba(0,0,0,0.15)"/>
+                        <path d="M 4 4 L 24 4 L 4  44 Z" fill="#2196F3"/>
+                    </svg>
+                    <span class="hidden-folded inline text-white">Solar CMS</span>
+                </a>
             </div>
+        </div>
 
-            <form action="{{ URL::route('Solar.Auth::login.post') }}" method="post" class="login-form">
+        <div class="p-a-md box-color r box-shadow-z1 text-color">
+            <form name="form" action="{{ URL::route('Solar.Auth::login.post') }}" method="post">
                 {{ csrf_field() }}
+                <div class="md-form-group clearfix">
+                    <div class="col-sm-6">
+                        <label>
+                            Огноо
+                        </label>
+                        <input type="number"
+                               class="editable-has-buttons editable-input form-control form-control-sm"
+                               min="2006" max="2016" value="2015">
+                    </div>
+                    <div class="col-sm-6">
+                        <label for="language">
+                            Хэл
+                        </label>
+                        <select id="language" class="form-control form-control-sm">
+                            <option value="mn">Монгол</option>
+                            <option value="en">English</option>
+                        </select>
+                    </div>
+                </div>
+
                 <div class="md-form-group float-label">
-                    <input type="email" class="md-input" id="email-input" name="email">
-                    <label for="email-input">Email</label>
+                    <input type="text" name="email" class="md-input">
+                    <label>Нэвтрэх нэр, имайл</label>
                 </div>
                 <div class="md-form-group float-label">
-                    <input type="password" class="md-input" id="password-input" name="password">
-                    <label for="password-input">Password</label>
+                    <input type="password" name="password" class="md-input">
+                    <label>Нууц үг</label>
                 </div>
-                <div class="m-b-md">
-                    <label class="md-check font-400">
-                        <input type="checkbox"><i class="green"></i> Keep me signed in
-                    </label>
+
+                <div class="md-form-group">
+                    <p><label class="md-check"><input type="checkbox"> <i class="blue"></i> Намайг сана</label></p>
                 </div>
-                <button md-ink-ripple type="submit" class="md-btn md-raised blue btn-block p-h-md">Sign in</button>
+                <div class="form-group">
+                    <button type="submit" class="btn primary btn-block p-x-md">Нэвтрэх</button>
+                </div>
             </form>
         </div>
-
-        @if (count($errors) > 0)
-            <div class="text-center text-danger">
-                Нэвтрэх нэр эсвэл нууц үг буруу байна.
+        <div>
+            <div class="text-center text-white">
+                &copy 2015 CTSystem
             </div>
-        @endif
-
-        <div class="p-v-lg text-center font-thin">
-            <div>Powered by Solar CMS &copy 2015</div>
         </div>
-
     </div>
 </div>
 
-<script src="{{ URL::asset('shared/js/dependencies.js')}}"></script>
-<script src="{{ URL::asset('shared/js/bundle.js')}}"></script>
-<script src="{{ URL::asset('assets/auth/js/bundle.js')}}"></script>
+
+<script src="{{ URL::asset('shared/js/vendor.js') }}"></script>
+<script src="{{ URL::asset('shared/js/app.js') }} "></script>
+@if(Config::get('app.debug'))
+    <script src="http://localhost:3000/js/app.js"></script>
+@else
+    <script src="{{ URL::asset('assets/auth/app.js') }}"></script>
+@endif
+
+@yield('script')
 </body>
 </html>
+

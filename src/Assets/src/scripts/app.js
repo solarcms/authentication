@@ -3,5 +3,3 @@
  */
 
 require('../scss/app.scss')
-
-require('./wave');
